@@ -1,4 +1,12 @@
 $(function($){
+    $(window).on('load', function () {
+        $(".preloader-item").fadeOut();
+        $("#preload").delay(200).fadeOut("slow");
+    
+    $('.b-gallery-controls li').on('click', function () {
+        $('.b-gallery-controls li').removeClass('active');
+        $(this).addClass('active');
+    });
     $('.b-counter-info-numbers').each(function(){
         $(this).prop('Counter', 0).animate({
             Counter:$(this).text()
@@ -10,15 +18,6 @@ $(function($){
                $(this).text(Math.ceil(now));
            } 
         });
-    });
-
-    $(window).on('load', function () {
-        $(".preloader-item").fadeOut();
-        $("#preload").delay(200).fadeOut("slow");
-    
-    $('.b-gallery-controls li').on('click', function () {
-        $('.b-gallery-controls li').removeClass('active');
-        $(this).addClass('active');
     });
     if ($('.b-gallery-filter').length > 0) {
         var containerEl = document.querySelector('.b-gallery-filter');
